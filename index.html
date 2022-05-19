@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="priApp">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PRI | Super Admin </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="@@class" ng-controller="LoginController">
+
+    <div id="preloader">
+        <i>.</i>
+        <i>.</i>
+        <i>.</i>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <a href="index.html"><img src="img/logo.png" alt="" style="width:150px;"></a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Website</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Register</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="authincation ">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-xl-5 col-md-6">
+                    <div class="mini-logo text-center my-4">
+                        <h4 class="card-title mt-5">Super Admin</h4>
+                    </div>
+                    <div class="auth-form card">
+                        <div class="card-body">
+                            <div method="post" name="myform" class="signin_validate row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="" name="email" ng-model="user.email">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" placeholder="" name="password" ng-model="user.password">
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault">Remember
+                                        me</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <a class="btn btn-primary" ng-click="onLogin()">Sign in</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/scripts.js"></script>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js "></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js "></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js "></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+
+    <script src="./lib/angular.min.js "></script>
+    <script src="./lib/moment.min.js "></script>
+    <script src="./lib/angular-moment.min.js "></script>
+    <script src="./js/app.js "></script>
+
+
+
+
+
+
+    <script type="text/javascript" src="https://widget.coinlore.com/widgets/ticker-widget.js"></script>
+    <div class="coinlore-priceticker-widget" style="position:fixed; left: 0; bottom: 0; z-index: 1000000;" data-mcurrency="usd" data-bcolor="#fff" data-scolor="#333" data-ccolor="#428bca" data-pcolor="#428bca"></div>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="priApp">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PRI |Super Admin Dashboard</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard" ng-controller="DashboardController">
+
+    <div id="preloader">
+        <i>.</i>
+        <i>.</i>
+        <i>.</i>
+    </div>
+
+    <div id="main-wrapper">
+
+
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="header-content">
+                            <div class="header-left">
+                                <div class="brand-logo">
+                                    <a class="mini-logo" href="index.html"><img src="./img/logo.png" alt="" width="80"></a>
+                                </div>
+
+                            </div>
+                            <div class="header-right">
+                                <div class="dark-light-toggle"><span class="dark"><i class="ri-moon-line"></i></span><span class="light"><i class="ri-sun-line"></i></span></div>
+                                <div class="nav-item dropdown notification dropdown">
+                                    <div data-toggle="dropdown" aria-haspopup="true" class="" aria-expanded="false">
+                                        <div class="notify-bell icon-menu"><span><i class="ri-notification-2-line"></i></span></div>
+                                    </div>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu notification-list dropdown-menu dropdown-menu-right">
+                                        <h4>Recent Notification</h4>
+                                        <div class="lists">
+                                            <a class="" href="index.html#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon success"><i class="ri-check-line"></i></span>
+                                                    <div>
+                                                        <p>Account created successfully</p>
+                                                        <span>2020-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="" href="index.html#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon fail"><i class="ri-close-line"></i></span>
+                                                    <div>
+                                                        <p>2FA verification failed</p>
+                                                        <span>2020-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="" href="index.html#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon success"><i class="ri-check-line"></i></span>
+                                                    <div>
+                                                        <p>Device confirmation completed</p>
+                                                        <span>2020-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="" href="index.html#">
+                                                <div class="d-flex align-items-center">
+                                                    <span class="me-3 icon pending"><i class="ri-question-mark"></i></span>
+                                                    <div>
+                                                        <p>Phone verification pending</p>
+                                                        <span>2020-11-04 12:00:23</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="notification.html">More<i class="ri-arrow-right-s-line"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dropdown profile_log dropdown">
+                                    <div data-toggle="dropdown" aria-haspopup="true" class="" aria-expanded="false">
+                                        <div class="user icon-menu active"><span><i class="ri-user-line"></i></span></div>
+                                    </div>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu dropdown-menu-right">
+                                        <div class="user-email">
+                                            <div class="user">
+                                                <span class="thumb"><img src="images/profile/3.png" alt=""></span>
+                                                <div class="user-info">
+                                                    <h5>Jannatul Maowa</h5>
+                                                    <span>Intez.inc@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="dropdown-item" href="profile.html"><span><i class="ri-user-line"></i></span>Profile</a>
+                                        <a class="dropdown-item" href="balance.html"><span><i class="ri-wallet-line"></i></span>Balance</a>
+                                        <a class="dropdown-item" href="settings-profile.html"><span><i class="ri-settings-3-line"></i></span>Settings</a>
+                                        <a class="dropdown-item" href="settings-activity.html"><span><i class="ri-time-line"></i></span>Activity</a>
+                                        <a class="dropdown-item" href="lock.html"><span><i class="ri-lock-line"></i></span>Lock</a>
+                                        <a class="dropdown-item logout" href="signin.html"><i class="ri-logout-circle-line"></i>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="brand-logo">
+                <a class="full-logo" href="dashboard.html"><img src="img/logo.png" alt="" width="40"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <span><i class="ri-home-5-line"></i></span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="investor_list.html">
+                            <span><i class="ri-wallet-line"></i></span>
+                            <span class="nav-text">Investors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bill.html">
+                            <span><i class="ri-secure-payment-line"></i></span>
+                            <span class="nav-text">Payment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="invoice.html">
+                            <span><i class="ri-file-copy-2-line"></i></span>
+                            <span class="nav-text">Invoice</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings-profile.html">
+                            <span><i class="ri-settings-3-line"></i></span>
+                            <span class="nav-text">Settings</span>
+                        </a>
+                    </li>
+                    <li class="logout">
+                        <a href="index.html">
+                            <span><i class="ri-logout-circle-line"></i></span>
+                            <span class="nav-text">Signout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container">
+                <div class="page-title">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-xl-4">
+                            <div class="page-title-content">
+                                <h3>Dashboard</h3>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="breadcrumbs"><a href="#">Home </a><span><i
+                                    class="ri-arrow-right-s-line"></i></span><a href="#">Dashboard</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class=" col-xxl-12 col-xl-12 col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Stat Information</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="total-balance">
+                                            <p>Total Registered Users</p>
+                                            <h2> {{stat.totalUser}}</h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="balance-stats active">
+                                            <p>Topup Balance</p>
+                                            <h3>$0</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="balance-stats">
+                                            <p>Current Package</p>
+                                            <h3>none</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="balance-stats">
+                                            <p>Total Bonus</p>
+                                            <h3>$0</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="balance-stats">
+                                            <p>Rank</p>
+                                            <h3>no rank</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 mb-3">
+                        <div class="row">
+                            <div class="col-xl-4 col-sm-6">
+                                <div class="stat-widget d-flex align-items-center bg-white">
+                                    <div class="widget-content">
+                                        <div class="row">
+                                            <div class="col-lg-9">
+                                                <h3>Configure Dashboard</h3>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href="#" class="btn btn-dark btn-lg ">Go</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-sm-6">
+                                <div class="stat-widget d-flex align-items-center bg-white">
+                                    <div class="widget-content">
+                                        <div class="row">
+                                            <div class="col-lg-9">
+                                                <h3>Configure Packages</h3>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href="#" class="btn btn-dark btn-lg ">Go</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <script src="vendor/jquery/jquery.min.js "></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+
+
+    <script src="vendor/chartjs/chartjs.js "></script>
+
+
+
+    <script src="js/plugins/chartjs-line-init.js "></script>
+    <script src="js/plugins/chartjs-investment.js "></script>
+
+
+
+
+    <script src="js/plugins/chartjs-donut.js "></script>
+
+
+
+
+
+
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js "></script>
+    <script src="js/plugins/perfect-scrollbar-init.js "></script>
+
+
+
+    <script src="vendor/circle-progress/circle-progress.min.js "></script>
+    <script src="js/plugins/circle-progress-init.js "></script>
+
+
+
+
+
+
+    <script src="js/scripts.js "></script>
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js "></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js "></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js "></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+
+    <script src="./lib/angular.min.js "></script>
+    <script src="./lib/moment.min.js "></script>
+    <script src="./lib/angular-moment.min.js "></script>
+    <script src="./js/app.js "></script>
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>

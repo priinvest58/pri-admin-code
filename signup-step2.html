@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="priApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PRI | Registration</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+
+<body class="@@class" ng-controller="MainController">
+
+    <div id="preloader">
+        <i>.</i>
+        <i>.</i>
+        <i>.</i>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <a href="index.html"><img src="img/logo.png" alt="" style="width:150px;"></a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Website</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Login</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="authincation ">
+        <div class="container ">
+
+            <div class="row justify-content-center align-items-center ">
+                <div class="col-xl-8 col-md-8 ">
+                    <div class="mini-logo text-center my-4">
+                        <h2 class=" mt-5">Registration Page</h2>
+                        <h4>Sponsor: {{user.sponsor}}</h4>
+                    </div>
+
+
+                    <div class=" card ">
+                        <div class="card-header ">
+                            <span>
+                                    <i class="far fa-user "></i> Personal Data
+                            </span>
+                        </div>
+                        <div class="card-body ">
+                            <div method="post " name="myform " class="signin_validate row g-3 ">
+
+
+
+                                <div class="col-md-6 ">
+                                    <label class="form-label ">First Name</label>
+                                    <input type="text" class="form-control " placeholder="John " ng-model="user.firstname">
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label class="form-label ">Last Name</label>
+                                    <input type="text" class="form-control " placeholder="Doe " ng-model="user.lastname">
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <label class="form-label ">Date of birth *</label>
+                                    <input type="text" class="form-control " placeholder="05/23/1992 " ng-model="user.dob">
+                                </div>
+                                <div class="col-md-4 ">
+                                    <label class="form-label ">Gender</label>
+                                    <select name="" id="" class="form-control" ng-model="user.gender">
+                                        <option value="0">--select----</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+
+                                </div>
+                                <div class=" col-md-4 ">
+                                    <label class="form-label ">Document ID </label>
+                                    <input type="text " class="form-control " placeholder=" " ng-model="user.documentID">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class=" card ">
+                        <div class="card-header ">
+                            <span>
+                                    <i class="fa fa-phone "></i> Contact
+                            </span>
+                        </div>
+                        <div class="card-body ">
+                            <div method="post " name="myform " class="signin_validate row g-3 ">
+
+
+
+                                <div class="col-md-6 ">
+                                    <label class="form-label ">Email</label>
+                                    <input type="email" class="form-control " placeholder="your@mail.com " ng-model="user.email" ng-change="validateEmail()">
+                                    <span ng-if="invalidUsername">Invalid email,the email is taken by another user.</span>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label class="form-label ">Re-enter email *</label>
+                                    <input type="email" class="form-control " placeholder="reenter@mail.com " ng-model="user.email2">
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <label class="form-label ">Phone *</label>
+                                    <input type="text" class="form-control " placeholder=" " ng-model="user.phone">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class=" card ">
+                        <div class="card-header ">
+                            <span>
+                                    <i class="fa fa-map "></i> Address
+                            </span>
+                        </div>
+                        <div class="card-body ">
+                            <div method="post " name="myform " class="signin_validate row g-3 ">
+
+
+
+                                <div class="col-md-6 ">
+                                    <label class="form-label ">Zip/Postal Code *</label>
+                                    <input type="text " class="form-control " placeholder="Zip/Postal Code " ng-model="user.zipCode">
+                                </div>
+                                <div class="col-md-12 ">
+                                    <label class="form-label ">Address *</label>
+                                    <input type="text" class="form-control " placeholder="Street and number " ng-model="user.address">
+                                </div>
+
+                                <div class="col-md-12 ">
+                                    <label class="form-label ">Address (Line 2) *</label>
+                                    <input type="text" class="form-control " placeholder="Apartment, suite, unit, building, floor, etc " ng-model="user.address2">
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <label class="form-label ">State/Province  *</label>
+                                    <input type="text" class="form-control " placeholder="State " ng-model="user.state">
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <label class="form-label ">City</label>
+                                    <input type="text" class="form-control " placeholder="City " ng-model="user.city">
+                                </div>
+                                <div class="col-md-4 ">
+                                    <label class="form-label ">Country</label>
+                                    <input type="text" class=" form-control " ng-model="user.country" readonly>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class=" card ">
+                        <div class="card-header ">
+                            <span>
+                                    <i class="fa fa-lock "></i> Access data
+                            </span>
+                        </div>
+                        <div class="card-body ">
+                            <div method="post " name="myform " class="signin_validate row g-3 ">
+
+
+
+                                <div class="col-md-6 ">
+                                    <label class="form-label ">Username *</label>
+                                    <input type="text" class="form-control " placeholder="Username " ng-model="user.username" ng-change="validateUsername()">
+                                    <p>Username must contain at least 6 characters (letters or numbers)</p>
+                                    <span ng-if="invalidUsername">Invalid username,the username was chosen.</span>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label class="form-label ">Password</label>
+                                    <input type="password" class="form-control " placeholder="Password " ng-model="user.password ">
+                                    <p>
+                                        Your password must contain at least 8 characters (letters and numbers and at least 1 uppercase and 1 lowercase letter)
+                                    </p>
+                                </div>
+
+                                <div class="col-md-4 ">
+                                    <label class="form-label ">Re-enter your password *</label>
+                                    <input type="password" class="form-control " placeholder=" Re-enter your password " ng-model="user.password2 ">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class=" card ">
+                        <div class="card-header ">
+                            <span>
+                                    <i class="fa fa-file "></i> Terms of responsibility
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <div method="post" name="myform " class="signin_validate row g-3 ">
+
+                                <a href="# ">
+                                    PRI Policies and Procedures
+                                </a>
+
+                                <div class="form-check ">
+                                    <input class="form-check-input " type="checkbox" ng-model="user.hasAgree">
+                                    <label class="form-check-label " for="flexCheckDefault ">
+                                       I accept the terms and conditions of the contract
+                                </label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-12 text-center " style="margin-bottom: 150px;">
+                        <button class="btn btn-primary btn-lg " ng-click="submitForm() " ng-disabled="!user.hasAgree || !validUsername || !validEmail"> Finish registration</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODALS-->
+    <div id="modal1" class="modal">
+        <div class="row ">
+            <div class="col-sm-12 col-md-12 " style="padding-top:50px ">
+                <h2>SPONSOR</h2>
+                <p>Inform your sponsor's username *</p>
+                <div class="form-group ">
+                    <label for="name "> Sponsor's Username  </label>
+                    <input type="text" id="name " class="form-control " ng-model="user.sponsor ">
+                    <span class=" text-danger " ng-if="invalidSponsor ">Invalid Sponsor</span>
+                </div>
+
+
+                <div class="form-group " style="text-align: right; margin-top: 20px; ">
+                    <a class="btn btn-success btn-lg " ng-click="applyChange() ">Apply Change</a>
+                    <a class="close" href="#" rel="modal:close"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+
+<script src="./lib/jquery-3.6.0.min.js "></script>
+<script src="./lib/bootstrap.min.js "></script>
+<script src="https://kit.fontawesome.com/7dc0f507af.js " crossorigin="anonymous "></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js "></script>
+
+
+
+<script src="js/scripts.js "></script>
+
+
+
+
+
+<script type="text/javascript " src="https://widget.coinlore.com/widgets/ticker-widget.js "></script>
+<div class="coinlore-priceticker-widget " style="position:fixed; left: 0; bottom: 0; z-index: 1000000; " data-mcurrency="usd " data-bcolor="#fff " data-scolor="#333 " data-ccolor="#428bca " data-pcolor="#428bca "></div>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js "></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js "></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js "></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js "></script>
+
+<script src="./lib/angular.min.js "></script>
+<script src="./lib/moment.min.js "></script>
+<script src="./lib/angular-moment.min.js "></script>
+<script src="./js/app.js "></script>
+
+<script>
+    $(document).ready(function() {
+
+        $("#modal1").modal({
+            escapeClose: false,
+            clickClose: false,
+            showClose: false,
+            fadeDuration: 250,
+            fadeDelay: 0.80
+        });
+
+    });
+</script>
+
+
+
+</html>
